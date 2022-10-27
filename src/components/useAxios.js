@@ -33,7 +33,7 @@ const useAxios = (url, isList, page, searchTerm, startsWith, offset) => {
                 setData(data.data);
                 setLoading(false);
                 if (!data) setError(true);
-                else if (data.data.results.length == 0) setError(true);
+                else if (data.data.results.length === 0) setError(true);
             } catch (e) {
                 setLoading(false);
                 setData(null);
