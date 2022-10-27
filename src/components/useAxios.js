@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 const useAxios = (url, isList, page, searchTerm, startsWith, offset) => {
     const axios = require('axios');
     const md5 = require('md5');
-    const publickey = '0ecac5d6b17a21f2c833ae9bf42214fa';
-    const privatekey = 'a4c3d3f6cafca2b24870e3a088669a0fb9622935';
+    const publickey = process.env.publicKey;
+    const privatekey = process.env.privateKey;
     const ts = new Date().getTime();
     const stringToHash = ts + privatekey + publickey;
     const hash = md5(stringToHash);
